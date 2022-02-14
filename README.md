@@ -33,3 +33,30 @@ Hashing function requirements :
 - The SHA hash is always 64 characters long (64 * 4 bits for each char = 256 bits )
 - The alogorithm works for any type of data like text, imagesm video etc.
 
+## Immutable Ledger
+- A ledger is typically a book or collection of accounts in which account transactions are recorded.
+- The word Immutable means “cannot be changed.” 
+
+## Distributed P2P (Peer to Peer) network
+- P2P is a decentralized network communications model.
+- It consist of a group of devices (nodes) that collectively store and share files where each node acts as an individual peer.
+- P2P communication is done without any central administration or server. All nodes have equal power and perform same tasks.
+- P2P architecture of blockchain removes the need of any middle-man or central server.
+- With the P2P network anyone who wishes to participate in the process of verifying and validating blocks can setup a node.
+
+P2P pros :
+- As P2P is decentralized, it is highly available due to decentralization.
+- P2P networks offer greater security compared to traditional client-server systems
+
+## Byzantine fault tolerance
+A fundamental problem in distributed computing and P2P systems is to achieve overall system relaibility in presence of number of faulty processes.  
+This often requires processes to agree on some data value that is needed for computing.  
+This is called consensus.
+
+- Byzantine Fault Tolerance is the characteristic which defines a system that tolerates the class of failures that belong to the Byzantine Generals’ Problem.
+
+## Consensus Protocol
+There are several protocols to achieve consensus in P2P network.
+- Proof-of-Work (PoW)
+- Proof-of-Stake (PoS)
+
