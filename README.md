@@ -17,3 +17,19 @@ Each block contains a cryptographyic hash of the previous block, a timestamp and
 
 ### Genesis Block
 The first block of a blockchain. It does not have a previous hash.
+
+## Hashing
+Hashing is a function to map data of arbitarary size to a fixed size.
+Hashing function requirements :
+- One way
+- deterministic : for a given input value it must always generate the same hash value.
+- Fast Computation
+- The avalanche effect (must in cryptography)
+- Must withstand collisions
+
+### SHA256 cryptography (Hashing algorithm)
+- Scecure Hash Algorithm + 256 bits memory it takes
+- it is a hexadecimal hash (possible characters are 0-9 and A-F)
+- The SHA hash is always 64 characters long (64 * 4 bits for each char = 256 bits )
+- The alogorithm works for any type of data like text, imagesm video etc.
+
