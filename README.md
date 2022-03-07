@@ -60,3 +60,6 @@ There are several protocols to achieve consensus in P2P network.
 - Proof-of-Work (PoW)
 - Proof-of-Stake (PoS)
 
+## Nonce
+- Nonce (Number only used once) is a number added to a hashed - or encrypted block in blockchain that, when rehashed, meets the dificulty level restrictions. The nonce is the number the blockchain miners are solving for, in order to receive cryptocurrency.
+
