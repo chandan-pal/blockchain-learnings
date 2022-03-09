@@ -57,7 +57,8 @@ This is called consensus.
 
 ## Consensus Protocol
 There are several protocols to achieve consensus in P2P network.
-- Proof-of-Work (PoW)
+- Proof-of-Work (PoW)\
+Proof of Work provides a powerful stamp that says ‘this history cannot be changed without doing a lot of work.
 - Proof-of-Stake (PoS)
 
 ## Nonce
