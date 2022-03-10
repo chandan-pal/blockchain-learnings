@@ -65,3 +65,7 @@ Proof of Work provides a powerful stamp that says ‘this history cannot be chan
 - Nonce (Number only used once) is a number added to a hashed - or encrypted block in blockchain that, when rehashed, meets the dificulty level restrictions. The nonce is the number the blockchain miners are solving for, in order to receive cryptocurrency.
 - Nonce is usually a 32bit number which can go from 0 to 2^32
 
+---------------------------------------------
+# BITCOIN
+Bitcoin is a decentralized digital currency based on **blockchain technology**, without a central bank or single administrator, that can be sent from user to user on the peer-to-peer bitcoin network without the need for intermediaries.
+
