@@ -66,6 +66,6 @@ Proof of Work provides a powerful stamp that says ‘this history cannot be chan
 - Nonce is usually a 32bit number which can go from 0 to 2^32
 
 ---------------------------------------------
-# BITCOIN
+# BITCOIN - a blockchain technology implementation
 Bitcoin is a decentralized digital currency based on **blockchain technology**, without a central bank or single administrator, that can be sent from user to user on the peer-to-peer bitcoin network without the need for intermediaries.
 
