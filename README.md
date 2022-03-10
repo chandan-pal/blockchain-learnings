@@ -67,5 +67,23 @@ Proof of Work provides a powerful stamp that says ‘this history cannot be chan
 
 ---------------------------------------------
 # BITCOIN - a blockchain technology implementation
-Bitcoin is a decentralized digital currency based on **blockchain technology**, without a central bank or single administrator, that can be sent from user to user on the peer-to-peer bitcoin network without the need for intermediaries.
+- Bitcoin is a decentralized digital currency based on **blockchain technology**, without a central bank or single administrator, that can be sent from user to user on the peer-to-peer bitcoin network without the need for intermediaries.
+- The Bitcoin crypto-currency was invented in 2008 by an unknown person or group of people using the name Satoshi Nakamoto.
+- The Bitcoin currency came to use in 2009.
 
+## Bitcoin Protocol
+There is a defined protocol for bitcoin to work as a crypto-currency based on blockchain technology. The bitcoin protocol states following points
+
+### Decentralized Network
+Bitcoin uses distributed ledger technology. Decentralized P2P network of nodes help to verify transactions in bitcoin.
+
+### Proof of work consensus
+Bitcoin uses proof of work consensus mechanism to rresolve conflicts in the distributed blockchain ledger. The node or group of nodes which wants to add a block (containing transactions) to the distributed blockchain ledger of bitcoin, need to solve a mathematical eqaution in oder to provide proof of work.\
+This process is known as mining of blocks (in general cryptocurrency mining).
+
+### BTC - Native currency of Bitcoin
+- Each unit of currency in bitcoin blockchain is referred to as a bitcoin (BTC)
+- The bitcoin miners get rewards in BTC units for successfully adding a block in the ledger.
+- The bitcoin network is designed in such a way that only 21 million BTC will ever exist with the last expected to mined(created) around year 2140.
+- The rate of BTC generated through cryptocurrency mining is programmed to cut in half every four years (known as the halving).
+- The above point makes BTC a deflationary asset unlike many other crypto-currencies.
