@@ -83,7 +83,20 @@ This process is known as mining of blocks (in general cryptocurrency mining).
 
 ### BTC - Native currency of Bitcoin
 - Each unit of currency in bitcoin blockchain is referred to as a bitcoin (BTC)
-- The bitcoin miners get rewards in BTC units for successfully adding a block in the ledger.
-- The bitcoin network is designed in such a way that only 21 million BTC will ever exist with the last expected to mined(created) around year 2140.
+- New Bitcoins are generated when a block is added in the bitcoin distributed ledger chain.
+- The bitcoin miners get the new BTC units generates as rewards for successfully adding a block in the ledger.
 - The rate of BTC generated through cryptocurrency mining is programmed to cut in half every four years (known as the halving).
+- Hence, The bitcoin network is designed in such a way that only 21 million BTC will ever exist with the last expected to mined(created) around year 2140.
 - The above point makes BTC a deflationary asset unlike many other crypto-currencies.
+
+### Bitcoin source code
+Bitcoin Core was launched as open source software in 2009. This enables blockchain developers to continuously release new updates that improve protocol functionality.
+
+### UTXO (Unspent Transaction Output
+- Bitcoin uses an Unspent Transaction Output (UTXO) model as a way to keep track of how funds move.
+- each UTXO can only be spent once.
+- When one user spends a UTXO, one or more new UTXO is created.
+- In the UTXO model, one or multiple unspent outputs may be added together to reflect the total amount of funds that belong to one user.
+
+### Bitcoin Script and Opcodes
+Bitcoin script is a scripting language to give Bitcoin Core instructions on how each UTXO can be spent.
