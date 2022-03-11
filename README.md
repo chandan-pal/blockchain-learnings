@@ -134,3 +134,15 @@ Bitcoin script is a scripting language to give Bitcoin Core instructions on how 
 When a P2PK transaction is created and submitted to Bitcoin’s peer to peer network, the sender is sending funds from their own Bitcoin wallet to a public key of another user.\
 If the recipient wants to spend those funds (spend the corresponding UTXO) at any point in the future, they only need to prove they own the public key to which the funds were sent.\
 Its usage faded due to the added benefits provided by using public addresses instead of public keys.
+
+### Bitcoin Transactions : Pay To Pubkey Hash (P2PKH)
+P2PKH transactions are sent to the hash of the recipient's public key.\
+Compared to a public key, a public key hash is a shorter and more manageable alphanumeric string.\
+P2PKH enables error detection through a checksum feature, helping users to drastically reduce the odds of sending BTC to an invalid address.\
+
+### Bitcoin Transactions : Pay To Script Hash (P2SH)
+Pay To Script Hash (P2SH) was introduced as a payment type in 2012.\
+P2SH transactions typically add constraints in addition to requiring an ordinary digital signature or pubkey verification. \
+It is a type of ScriptPubKey which allows for the spending of bitcoin based on the satisfaction of a script (bitcoin script) whose hash is specified within the transaction.\
+  For example, if Alice sends Bob 1 BTC in a P2SH transaction, she includes the hash of the script required to spend the bitcoin in the transaction. This script can require signatures by Bob’s private keys and/or many other qualifications. When Bob wants to spend the bitcoin he has received from Alice, he reconstructs the script whose hash Alice used to send the bitcoin, and signs the transaction with any private keys required by the script.
+
