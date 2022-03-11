@@ -116,4 +116,4 @@ Bitcoin script is a scripting language to give Bitcoin Core instructions on how 
 - While users can receive funds via a **public key**, they can use a **Bitcoin wallet address** (also known as a public address) instead to receive BTC transactions.
 - A public address is created from a corresponding public key using two hashing algorithms: the Secure Hash Algorithm 256 (SHA-256) and the RACE Integrity Primitives Evaluation Message Digest 160 (RIPEMD-160).
 - Bitcoin wallet address (or public address) adds extra layer of security and freindlier UX by a shorter alphanumeric string.
-<img src="bitcoinAddress-gen.png" width="450" height="350" />
+<img src="bitcoinAddress-gen.png" />
