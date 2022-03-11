@@ -92,11 +92,14 @@ This process is known as mining of blocks (in general cryptocurrency mining).
 ### Bitcoin source code
 Bitcoin Core was launched as open source software in 2009. This enables blockchain developers to continuously release new updates that improve protocol functionality.
 
-### UTXO (Unspent Transaction Output
+### UTXO (Unspent Transaction Output)
 - Bitcoin uses an Unspent Transaction Output (UTXO) model as a way to keep track of how funds move.
 - each UTXO can only be spent once.
 - When one user spends a UTXO, one or more new UTXO is created.
 - In the UTXO model, one or multiple unspent outputs may be added together to reflect the total amount of funds that belong to one user.
+
+### Bitcooin Mempool
+The transactions which are sent on the Bitcoin Network are not added directly to the blockchain. All of the valid transactions have to enter a waiting area before they are accepted in a block. This waiting area is known as the mempool.
 
 ### Bitcoin Script and Opcodes
 Bitcoin script is a scripting language to give Bitcoin Core instructions on how each UTXO can be spent.
