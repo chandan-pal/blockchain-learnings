@@ -145,4 +145,12 @@ Pay To Script Hash (P2SH) was introduced as a payment type in 2012.\
 P2SH transactions typically add constraints in addition to requiring an ordinary digital signature or pubkey verification. \
 It is a type of ScriptPubKey which allows for the spending of bitcoin based on the satisfaction of a script (bitcoin script) whose hash is specified within the transaction.\
   For example, if Alice sends Bob 1 BTC in a P2SH transaction, she includes the hash of the script required to spend the bitcoin in the transaction. This script can require signatures by Bob’s private keys and/or many other qualifications. When Bob wants to spend the bitcoin he has received from Alice, he reconstructs the script whose hash Alice used to send the bitcoin, and signs the transaction with any private keys required by the script.
+  
+  ### Segregated Witness (SegWit)
+  - In bitcoin blockchain, there is a size limit to each block (1 MB).
+  - This is done to make the creation and synchronization of blocks easier over the P2P network.
+  - Earlier a transaction information used to hold infomation like recipient public key, sender's public key, signature, transaction amount. signature being the largest information used to contribute about 60% of the transaction space. Thus, limiting the number of transactions one block can hold.
+  - SegWit moves the signature outside of the transaction data. This reduces the size required for transaction storage.
+  - It does this by splitting the transaction into two segments, removing the unlocking signature ("witness" data) from the original portion and appending it as a separate structure at the end. Thus, allowing more number of transactions to be fit in a block.
+  
 
