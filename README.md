@@ -117,3 +117,14 @@ Bitcoin script is a scripting language to give Bitcoin Core instructions on how 
 - A public address is created from a corresponding public key using two hashing algorithms: the Secure Hash Algorithm 256 (SHA-256) and the RACE Integrity Primitives Evaluation Message Digest 160 (RIPEMD-160).
 - Bitcoin wallet address (or public address) adds extra layer of security and freindlier UX by a shorter alphanumeric string.
 <img src="bitcoinAddress-gen.png" />
+
+### Bitcoin wallet
+- A bitcoin wallet is not something where BTC units are stored.
+- Instead, Bitcoin wallets simply act as secure key storage, and a communication tool with the blockchain (distributed ledger).
+
+### Bitcoin HD wallets
+- Although the private key is secure and not disclosed to the network, but while spending UTXO the public key has to be in open for verification of the transaction.
+- Now since all transactions are on a publically distributed network and if everytime same public key is used for sending and receiving transactions, then it becomes deterministic. The balance and transaction history of a user can be determied from the blockchain for a particular public key.
+- So, there is a need to limit the use of public keys to one transaction each, a new pair of private-public keys would need to be created for each transaction.\
+**Deterministic Wallets** : In which all keys can be traced back to an original random seed (usually a set of random words). Means, The original seed is enough to recover all private and public keys.\
+**Hierarchical Deterministic (HD) Wallets** : Advanced type of deterministic wallet. They contain keys in a tree structure, in which parent keys can produce children keys, which can produce grandchildren keys, and so on, infinitely. The cryptocurrency holder can use the tree structure to organize transactions by type of transaction or by entity involved, such as departments or subsidiaries. HD wallets also offer the option of creating public keys without having to access the corresponding private keys. This means they can be used on insecure servers or in a receive-only mode.
