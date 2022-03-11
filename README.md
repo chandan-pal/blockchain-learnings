@@ -129,3 +129,8 @@ Bitcoin script is a scripting language to give Bitcoin Core instructions on how 
 **Deterministic Wallets** : In which all keys can be traced back to an original random seed (usually a set of random words). Means, The original seed is enough to recover all private and public keys.\
 **Hierarchical Deterministic (HD) Wallets** : Advanced type of deterministic wallet. They contain keys in a tree structure, in which parent keys can produce children keys, which can produce grandchildren keys, and so on, infinitely. The cryptocurrency holder can use the tree structure to organize transactions by type of transaction or by entity involved, such as departments or subsidiaries. HD wallets also offer the option of creating public keys without having to access the corresponding private keys. This means they can be used on insecure servers or in a receive-only mode.
 <img src="bitcoin_hdKeys.png" width="450" height="350" />
+
+### Bitcoin Transactions : Pay to Pubkey (P2PK)
+When a P2PK transaction is created and submitted to Bitcoin’s peer to peer network, the sender is sending funds from their own Bitcoin wallet to a public key of another user.\
+If the recipient wants to spend those funds (spend the corresponding UTXO) at any point in the future, they only need to prove they own the public key to which the funds were sent.\
+Its usage faded due to the added benefits provided by using public addresses instead of public keys.
