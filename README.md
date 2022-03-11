@@ -100,3 +100,14 @@ Bitcoin Core was launched as open source software in 2009. This enables blockcha
 
 ### Bitcoin Script and Opcodes
 Bitcoin script is a scripting language to give Bitcoin Core instructions on how each UTXO can be spent.
+
+### Bitcoin Private Keys
+- The bitcoin protocol makes use of aysymmetric encryption.
+- Users can generate private keys (secret key) and corresponding public key.
+- Private Keys are meant to be kept secret, and public keys can be shared publically to receive BTC transactions.
+- Only user who has access to the matching Bitcoin private key can spend funds (unlock UTXOs)
+- The security of Bitcoin private keys is supported by Elliptic Curve Cryptography (ECC) and cryptographic hash functions.
+- Users who want to send BTC transactions on the network can use their private key to create digital signatures. 
+- A digital signature functions similarly to a one-time passcode for identity authentication. It enables the recipient of a transaction or anyone else on the network to mathematically prove with 100 percent certainty that a specific Bitcoin private key provided the signature.
+<img src="private-public-key.png" width="450" height="350" />
+- 
