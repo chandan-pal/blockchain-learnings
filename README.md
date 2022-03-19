@@ -169,7 +169,7 @@ Ethereum is a decentralized, open source and distributed computing platform that
 - Requests for computation are called transaction request.
 - The record of all transactions and the EVM's present state gets stored on the blockchain, which in turn is stored and agreed upon by all nodes.
 
-# Smart Contracts
+## Smart Contracts
 - In practice, participants don't write new code every time they want to request a computation on the EVM.
 - Rather, application developers upload programs (reusable snippets of code) into EVM state.
 - Users make request to execute those code snippets with varying parameters.
@@ -179,5 +179,30 @@ Ethereum is a decentralized, open source and distributed computing platform that
 
 Thus, with smart contracts, developers can build and deploy arbitrarily complex user-facing apps and services such as marketplaces, financial instruments, games, etc.
 
+## Decentralized Applications (Dapps)
+- A decentralized application (dapp) is an application built on a decentralized network that combines a smart contract and a frontend user interface.
+- On Ethereum, smart contracts are accessible and transparent – like open APIs – so your dapp can even include a smart contract that someone else has written.
+- A Dapp has its backend code running on a decentralized P2P network.
+- A Dapp can have frontend code and user interfaces written in any language to make calls to its backend.
+- The frontend can get hosted on a decentralized storage such as IPFS.
 
+Features of Dapps :
+- **Decentralized** : Dapps operate on Ehtereum, an open pulic decentralized platform where no one person or group has control.
+- **Deterministic** : Dapps perform the same function irrespective of the environment in which they get execuuted.
+- **Turing Complete** : Dapps can perform any action given the required resources.
+- **Isolated** : Dapps are executed in a virtual environment known as Ethereum virtual machine so that if the smart contract has a bug, it won't hamper the normal functioning of the blockchain network.
+
+Benefits of Dapps :
+- **Zero downtime** : The network as a whole will always be able to serve clients looking to interact with the contract.
+- **Privacy** : A real world identity is not needed to deploy or interact with the Dapp.
+- **Resistance to censorship** : No single entity on the network can block users form submitting transactions, deploying dapps, or reading data from blockchain.
+- **Complete Data integrity** : Data stored on the blockchain is immutable and indisputable (because of cryptographic primitives).
+- **Trustless computation/verifiable behaviour** : smart contrats can be analyzed and are guaranteed to execute in predictable ways, without the need to trust a central authority.
+
+Drawback of Dapps :
+- **Maintenance** : Dapps can be harder to maintain because the code and data published to the blockchain are harder to modify.
+- **Performance Overhead** : There is a huge performance overhead, and scaling is really hard. To achieve level of security, integrity, transparency and reliability, every node runs and stores every transaction. On top of this proof-of-work takes time as well.
+- **Network Congestion** : When one Dapp uses too many computational resources, the entire network gets backed up.
+- **User Experience** : It may be harder to engineer user-friendly experiences because the average end-user might find it too difficult to set up a tool stack necessary to interact with the blockchain in a truly secure fashion.
+- **Centralization** : User-friendly and developer-friendly solutions built on top of the base layer of Ethereum might end up looking like centralized services anyways.
 
