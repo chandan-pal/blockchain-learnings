@@ -6,6 +6,7 @@ Stuart Haber & W. Scott Stornetta - paper on how to timestamp a digital document
 ## What is blockchain ?
 A blockchain is a growing list of records (called blocks) that are linked together with cryptography.
 Each block contains a cryptographyic hash of the previous block, a timestamp and the current blocks data.
+It can also be considered as a public database that is updated and shared across many computers in a network.
 
 - As each block contains the information about the block previous to it, they form a chain, with each additional block reinforcing the ones before it. Therefore blockchains are resistant to modification, because once recorded, the data in any given block cannot be altered retroactively without altering all subsequent blocks.
 
@@ -156,4 +157,27 @@ It is a type of ScriptPubKey which allows for the spending of bitcoin based on t
   - SegWit moves the signature outside of the transaction data. This reduces the size required for transaction storage.
   - It does this by splitting the transaction into two segments, removing the unlocking signature ("witness" data) from the original portion and appending it as a separate structure at the end. Thus, allowing more number of transactions to be fit in a block.
   
+-------------------------------------------------------------------------------------
+# Ethereum - The world computer
+Ethereum is a decentralized, open source and distributed computing platform that enables the creation of smart contracts and decentralized applications (also known as dapps).
+
+- In Ehtereum universe, there is a single, canonical computer (called the ethereum virtual machine, EVM).
+- Each node in the Ethereum network keeps a compy of the state of EVM and agrrees on the state of EVM.
+- Any node in the network can broadcast a request for execution.
+- Whenever such request is broadcast, other nodes in the network verify, validate and execute the computation request.
+- The execution causes a state change in the EVM, which is comitted and propogated throught the entire network.
+- Requests for computation are called transaction request.
+- The record of all transactions and the EVM's present state gets stored on the blockchain, which in turn is stored and agreed upon by all nodes.
+
+# Smart Contracts
+- In practice, participants don't write new code every time they want to request a computation on the EVM.
+- Rather, application developers upload programs (reusable snippets of code) into EVM state.
+- Users make request to execute those code snippets with varying parameters.
+- The uploaded programs are called **Smart Contracts**.
+- Any developer can create a smart contract and make it public to the network, using blockchain as its data layer, for a fee paid to the network.
+- Any user can then call the smart contract to execute its code, again for a fee paid to the network.
+
+Thus, with smart contracts, developers can build and deploy arbitrarily complex user-facing apps and services such as marketplaces, financial instruments, games, etc.
+
+
 
