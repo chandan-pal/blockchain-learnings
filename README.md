@@ -268,3 +268,9 @@ It is a blockchain-based cooperative that is collectively owned by its members, 
 
 It’s important to understand that great care has been taken not to make these tokens into equity shares – they are more like contributions that give people voting rights but not ownership. In most cases, a DAO is not owned by anyone – it’s just software running on the ethereum network.
 
+## Soft Fork and Hard Fork
+Hard forks and soft forks are essentially the same in the sense that when a cryptocurrency platform's existing code is changed, an old version remains on the network while the new version is created.\
+With a soft fork, only one blockchain will remain valid as users adopt the update. Whereas with a hard fork, both the old and new blockchains exist side by side, which means that the software must be updated to work by the new rules.\
+Both forks create a split, but a hard fork creates two blockchains and a soft fork is meant to result in one.
+
+
