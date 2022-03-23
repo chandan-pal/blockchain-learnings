@@ -214,5 +214,43 @@ The smart contracts are executed in a virtual machine (Ethereum Virtual Machine 
 - It's the environment in which all Ethereum accounts and smart contracts live.
 - At any given block in the chain, Ethereum has only one canoical state, and EVM is what defines the rules for computing a new valid state from block to block.
 - Ethereum is distributed state machine.
-- 
+- The EVM executes as a stack machine with a depth of 1024 items. Each item is a 256-bit word, which was chosen for the ease of use with 256-bit cryptography (such as Keccak-256 hashes or secp256k1 signatures).
+
+## Gas
+Gas refers to the unit that measures the amount of computational effort required to execute specific operations on ethereum network.\
+Since each ehtereum transaction requires computational resources to execute, each transactions requires a fee.\
+Gas refers to the fee required to conduct a transaction on Ethereum successfully.\
+Gas fees are paid in Ethereum's native currency, ether (ETH).
+- Gas prices are denoted in **gwei (giga-wei)** which itself is a denomination of ETH - 1 gwei = 0.000000001 ETH (10-9 ETH).
+
+Gas fees help keep the ethereum network secure. By requiring a fee for every transaction executed on the network, bad actors are prevented from spamming the network.\
+In order to avoid accidental or hostile infinite loops or other computational wastage in code, each transaction is required to set a limit to how many computational steps of code execution (gas) it can use.
+Any gas not used in transaction is returned to the user.
+
+### Gas Limit
+Maximum amount of gas user is willing to consume on a transaction. A standard ETH transfer requires a gas limit of 21000 units of gas.\
+More complicated transactions involving smart contracts require more computational work, so they require higher gas limit.
+
+### Block Size
+Ethereum earlier had a fixed block size. As a result users often had to wait for their transactions to get included in a block, leading to a poor user experience.\
+After London upgrade variable block-size was introduced in Ethereum.
+- Now each block has a target block size of 15 million gas.
+- Size of block will increase or decrease in accordance with network demand up untill the block limit of 30M gas.
+- If the block size is greater than the target block size of 15M, the ethereum protocol will increase the base fee for the following block.
+- Similarly, the ethereum protocol will reduce the base fee if the block size is less than target block size.
+- The amount by which the base fee is adjusted is proportional to how far the current block size is from the target.
+
+### Base fee
+Every block has a base fee which acts as a reserve price. i.e the price of the gas included in a block of target size (15M).\
+The base fee is calculated by a formula that compares the size of the previous block (the amount of gas used for all the transactions) with the target size. 
+When the block is mined this base fee is "burned", removing it from circulation.
+The base fee will increase by a maximum of 12.5% per block if the target block size is exceeded.
+
+### Prioroty Fee (tips)
+London upgrage of Ethereum also introduced a priority fee to incentivize miners to include a transaction in the block. Under normal conditions, a small tip provides miners a minimal incentive to include a transaction. For transactions that need to get preferentially executed ahead of other transactions in the same block, a higher tip will be necessary to attempt to outbid competing transactions.
+
+### Max Fee
+TO execute a transaction on the network, users can specify a maximum limit they are willing to pay for their transaction to be executed.\
+For a transaction, the max fee must exceed the sum of base fee and the tip.\
+The transaction sender is refunded the difference between the max fee and the sum of the base fee and tip.
 
