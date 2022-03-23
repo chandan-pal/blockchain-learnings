@@ -206,3 +206,13 @@ Drawback of Dapps :
 - **User Experience** : It may be harder to engineer user-friendly experiences because the average end-user might find it too difficult to set up a tool stack necessary to interact with the blockchain in a truly secure fashion.
 - **Centralization** : User-friendly and developer-friendly solutions built on top of the base layer of Ethereum might end up looking like centralized services anyways.
 
+
+## Ethereum Virtual Machine
+The smart contracts are executed in a virtual machine (Ethereum Virtual Machine - EVM) and not directly on nodes machine, Which protects the participants from directs threats like access to private files, or execution of malicius software directtly on particiapnts machine.
+<img src="EVM.png" />
+
+- It's the environment in which all Ethereum accounts and smart contracts live.
+- At any given block in the chain, Ethereum has only one canoical state, and EVM is what defines the rules for computing a new valid state from block to block.
+- Ethereum is distributed state machine.
+- 
+
