@@ -61,6 +61,9 @@ There are several protocols to achieve consensus in P2P network.
 - Proof-of-Work (PoW)\
 Proof of Work provides a powerful stamp that says ‘this history cannot be changed without doing a lot of work.
 - Proof-of-Stake (PoS)
+Proof-of-stake is done by validators who have staked some asset to participate in the system.\
+Instead of needing to do intense computational work, you simply need to have staked your coins in the network.\
+A proof-of-stake system is kept secure by the fact that you'd need 51% of the total staked coins to defraud the chain.
 
 ## Nonce
 - Nonce (Number only used once) is a number added to a hashed - or encrypted block in blockchain that, when rehashed, meets the dificulty level restrictions. The nonce is the number the blockchain miners are solving for, in order to receive cryptocurrency.
@@ -253,4 +256,15 @@ London upgrage of Ethereum also introduced a priority fee to incentivize miners 
 TO execute a transaction on the network, users can specify a maximum limit they are willing to pay for their transaction to be executed.\
 For a transaction, the max fee must exceed the sum of base fee and the tip.\
 The transaction sender is refunded the difference between the max fee and the sum of the base fee and tip.
+
+## Decentralized Autonomous Organization (DAO)
+DAOs are blockchain-based organizations that operate without central authorities. Its goal is to codify the rules and decisionmaking apparatus of an organization, eliminating the need for documents and people in governing, creating a structure with decentralized control.\
+It is a blockchain-based cooperative that is collectively owned by its members, with rules set and executed through code.
+
+- A group of people write the smart contracts (programs) that will run the organization.
+- There is an initial funding period in which people add funds to the DAO by purchasing tokens that represent ownership – this is called a crowdsale, or an initial coin offering (ICO) – to give it the resources it needs.
+- When the funding period is over, the DAO begins to operate.
+- People then can make proposals to the DAO on how to spend the money, and the members who have bought in can vote to approve these proposals.
+
+It’s important to understand that great care has been taken not to make these tokens into equity shares – they are more like contributions that give people voting rights but not ownership. In most cases, a DAO is not owned by anyone – it’s just software running on the ethereum network.
 
