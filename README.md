@@ -273,4 +273,16 @@ Hard forks and soft forks are essentially the same in the sense that when a cryp
 With a soft fork, only one blockchain will remain valid as users adopt the update. Whereas with a hard fork, both the old and new blockchains exist side by side, which means that the software must be updated to work by the new rules.\
 Both forks create a split, but a hard fork creates two blockchains and a soft fork is meant to result in one.
 
-
+## How Ethereum transactions are mined
+1. A user writes and signs a transaction request with private key of some account.
+2. The user broadcasts the transaction request to the entire ethereum network from some node.
+3. Upon listening about the new transaction request each node in the ethereum network adds the transaction request to their local mempool (a list of all transaction requests they’ve heard about that have not yet been committed to the blockchain in a block).
+4. A mining node aggregates aggregates several dozen or hundred transaction requests into a potential block, in a way that maximizes the transaction fees they earn while still staying under the block gas limit.
+  - The mining node verifies the validity of each transaction request (i.e. no one is trying to transfer ether out of an account they haven’t produced a signature for, the request is not malformed, etc.)
+  - Executes the code request, altering the state of local copy of their EVM. (The miner awards the transaction fee for each such transaction request to their own account)
+  - The miner then begins the process of producing the proof-of-work (PoW) for the potential block.
+  - Eventually, miner will finish producing certificate for a block which includes the specific transaction.
+5. The miner then broadcasts the completed block, which includes the certificate and a checksum of the claimed new EVM state.
+6. Other nodes listen about this new block. They verify the certificate, execute all transactions on the block themselve and verify that the checksum of their of their new EVM state matches the checksum of the state claiimed by the miners block.
+7. Then these nodes append the mined block to the tail of their blockchain, and accept the new EVM state as the canonical state.
+8. Each node removes all transactions in the new block from their local mempool of unfulfilled transaction requests. 
