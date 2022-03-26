@@ -285,4 +285,51 @@ Both forks create a split, but a hard fork creates two blockchains and a soft fo
 5. The miner then broadcasts the completed block, which includes the certificate and a checksum of the claimed new EVM state.
 6. Other nodes listen about this new block. They verify the certificate, execute all transactions on the block themselve and verify that the checksum of their of their new EVM state matches the checksum of the state claiimed by the miners block.
 7. Then these nodes append the mined block to the tail of their blockchain, and accept the new EVM state as the canonical state.
-8. Each node removes all transactions in the new block from their local mempool of unfulfilled transaction requests. 
+8. Each node removes all transactions in the new block from their local mempool of unfulfilled transaction requests.
+
+
+------------------------------------------------------------------------------------------
+### Blockchain Trilemma
+The balancing act between decentralization, security, and scalability within a blockchain infrastructure.
+
+# Blockchain Scalability
+Scalability refers to a blockchain network’s ability to support high transactional throughput and future growth.
+
+## Layer-1 & Layer-2 Scaling Solutions
+In decentralized ecosystem, a Layer-1 network refers to a blockchain, while a Layer-2 protocol is a third-party integeration that can be used in conjuction with a layer-1 blockchain.
+- Layer-1 scaling solutions augment the base layer of the blockchain protocol itself in order to improve scalability.
+- Layer-1 scaling solutions change the rules of the blockchain protocol directly to increase transaction capacity and speed, while accommodating more users and data. e.g. increasing the amount of data contained in each block.
+- Layer-2 refers to a network or technology that operates on top of an underlying blockchain protocol to improve its scalability and efficiency.
+- Layer-2 category of scaling solutions entails shifting a portion of a blockchain protocol’s transactional burden to an adjacent system architecture, which then handles the brunt of the network’s processing and only subsequently reports back to the main blockchain to finalize its results.
+
+## Consensus protocol improvements - Layer-1 blockchain scaling
+Some consensus machanisms are more efficient than others.
+- **Proof-of-Work (PoW)** is the consensus protocol currently in use on popular blockchain networks like Bitcoin. But PoW can be slow.
+- **Proof-of-Stake (PoS)** machanism proccess and validate new blocks of transaction data based on participant staking collateral in the network.
+
+## Sharding - Layer-1 blockchain scaling
+Sharding entails breaking the state of the entire blockchain network into shards - rather than requiring all nodes to maintain the entire network.\
+These network shards are simultaneously processed in parallel by the network, allowing for sequential work on numerous transactions.\
+Each network node is assigned to a particular shard instead of maintaining a copy of the blockchain in its entirety.\
+Individual shards provide proofs to the mainchain and interact with one another to share addresses, balances, and general states using cross-shard communication protocols.
+
+## Nested Blockchains - Layer-2 blockchain scaling
+A nested blockchain is essentially a blockchain within, or rather, atop another blockchain.
+- A nested blockchain architecture typically involves a main blockchain that sets parameter for a broader network, while executions are undertaken on an interconnected web of secondary chains.
+- Multiple blockchain levels can be built upon a mainchain, with each level using a parent-child connection. 
+- The parent chain delegates work to child chain that process and return it to the parent after completion.
+- The underlying base blockchain does not take part in the network functions of secondary chains unless dispute resolution is necessary.
+
+## State Channels - Layer-2 blockchain scaling
+A state channel facilitates two-way communication between a blockchain and off-chain transactional channels and improves overall transaction capacity and speed.
+- A state channel does not require validation by nodes of the layer-1 network.
+- It is a network-adjacent resource that is sealed off by using a multi-signature or smart contract machanism.
+- When a transaction or a batch of transactions is completed on a state channel, the final state of the channel and all its inherent transactions are recorded on the underlying blockchain.
+
+## Side chains - Layer-2 blockchain scaling
+A sidechain is a blockchain adjacent transactional chain that's typically used for large batch transactions.
+- Sidechains use an independent consensus mechanism (seperate from the original chain) which can be optimized for speed and scalability.
+- With a sidechain architecture, primary role of the mainchain is to maintain overall security, confirm batched transaction records, and resolve disputes.
+- Sidechain transactions aren’t private between participants.
+- Sidechain security breaches do not impact the mainchain or other sidechains.
+
