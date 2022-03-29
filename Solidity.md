@@ -42,3 +42,15 @@ ABI encoder requires a description of the contract’s interface like function n
     - components: Used to define tuple types, if a tuple type is reached, it is represented as type = tuple.
 - outputs: It is an array of output objects similar to inputs.
 - stateMutability: Defines the mutability of a function.
+
+## Boilerplate Solidity Code
+```solidity
+//SPDX-License-Identifier: UNLICENSED"
+pragma solidity >=0.5.0 <0.9.0;
+contract demo {
+    
+}
+```
+
+
+
