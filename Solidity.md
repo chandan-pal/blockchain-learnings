@@ -180,3 +180,63 @@ defined by using the 'function' keyword, followed by name. A function can also h
 'pure' keyword is used to indicate that the function is not reading any state variable as well as not modifying any state variable.\
 when modifying a state variable in a function, neither pure nor view keyword should be used.
 
+## Inheritance
+Inheritance in solidity is the procedure in which one contract inherits the  attributes and methods of another contract.
+
+```solidity
+//SPDX-License-Identifier: UNLICENSED"
+pragma solidity >=0.5.0 <0.9.0;
+contract Parent {
+    string public str;
+    
+}
+contract Child is Parennt {
+    
+}
+```
+
+## Abstract Contracts
+Abstract contracts are contracts that have at least one function without implementation. The abstract contract defines the structure of the contract and any derived non-abstract contract inherited from it should provide an implementation for the incomplete functions.
+- functions without implementation must contation **'virtual'** keyword.
+
+```solidity
+//SPDX-License-Identifier: UNLICENSED"
+pragma solidity >=0.5.0 <0.9.0;
+abstract contract Parent {
+    string public str;
+    function setter(string memory _str) public virtual;
+}
+contract Child is Parennt {
+    function setter(string memory _str) public override {
+        str = _str;
+    }
+}
+```
+
+## Interface
+An interface is an agreement or a contract between itself and any cotract that implements it.
+- Interface can only inherit from other interfaces and not other contracts.
+- They cannot declare state variables
+- They cannot declare constructor
+- functions can be declared but not implemented. All declared functions must be external.
+
+```solidity
+//SPDX-License-Identifier: UNLICENSED"
+pragma solidity >=0.5.0 <0.9.0;
+interface contract Parent {
+    
+}
+contract Child is Parennt {
+    function setter(string memory _str) public override {
+        str = _str;
+    }
+}
+```
+
+## Polymorphism
+Solidity supports two types of polymorphisms
+- Function Polymorphism: method overloading. multiple functions are declared having the same name within the same contract or inheriting contract.
+- Contract Polymorphism: means using multiple contract instances interchangeably when they are related to each other by using inheritance.
+
+
+
