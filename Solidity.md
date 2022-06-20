@@ -149,6 +149,19 @@ contract demo {
 }
 ```
 
+### Mappings (key - value)
+```solidity
+//SPDX-License-Identifier: UNLICENSED"
+pragma solidity >=0.5.0 <0.9.0;
+contract demo {
+    mapping(uint=>string) public student;
+    function input(uint _roll, string memory _name) public {
+        student[_roll] = _name;
+    }
+    
+}
+```
+
 ## State variables, Local variables and Global variables
 - State Variables: The variables whose value are permanently stored in a contract storage. For each stage variable being stored/changed, some gas will be used.
 - Local Variables: Variables whose values are present till function is executing. Declared inside a function. They do not cost any gas.
