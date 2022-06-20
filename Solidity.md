@@ -247,5 +247,29 @@ Solidity supports two types of polymorphisms
 | Derived Contract | :heavy_check_mark: | | :heavy_check_mark: | :heavy_check_mark: |
 | Other Contracts | :heavy_check_mark: | | | :heavy_check_mark: |
 
+## function Modifier
+A function modifier is a compile-time source code roll-up. It can be used to amend the semantics of functions in a declarative way.\
+A modifier aims to change the behaviour of the function to which it is attached. for e.g. automatically checking a condition prior to executing a function.
+- modifier can also be written with arguments.
 
+```solidity
+modifier MyModifier {
+    // modifier code
+}
 
+modifier modifierWithArgs(uint a) {
+    // modifier code
+}
+modifier onlyOwner {
+    require(msg.sender == owner, "Only owner can execute the function");
+    _; // resume with function execution
+}
+
+// 
+function isAuthorised(address _user) public view onlyOwner returns(bool) {
+    return true; 
+}
+```
+### _; sympbol
+The symbol _; is called a merge wildcard. It merges the function code with the modifier code where the _; is placed.\
+The place where you write the _; symbol will decide if the function has to be executed before, in between or after the modifier code.
