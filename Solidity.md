@@ -239,4 +239,13 @@ Solidity supports two types of polymorphisms
 - Contract Polymorphism: means using multiple contract instances interchangeably when they are related to each other by using inheritance.
 
 
+## Visibility specifier
+|| PUBLIC | PRIVATE | INTERNAL | EXTERNAL |
+| ---- | ---- | ---- | ---- | ---- |
+| Outside world | :heavy_check_mark: | | | :heavy_check_mark: |
+| Within Contract | :heavy_check_mark: | :heavy_check_mark: | :heavy_check_mark: | |
+| Derived Contract | :heavy_check_mark: | | :heavy_check_mark: | :heavy_check_mark: |
+| Other Contracts | :heavy_check_mark: | | | :heavy_check_mark: |
+
+
 
