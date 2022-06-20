@@ -53,4 +53,10 @@ contract demo {
 ```
 
 
+## State variables, Local variables and Global variables
+- State Variables: The variables whose value are permanently stored in a contract storage. For each stage variable being stored, some gas will be used.
+- Local Variables: Variables whose values are present till function is executing. Declared inside a function. They do not cost any gas.
+- Global Variables: Special variables exists in the global namespace used to get information about the blockchain.
 
+some datatypes like string by default get stored in contract storage. for that we specifically need to specify **'memory'** keyword.
+``` string memory str = "test"; ```
