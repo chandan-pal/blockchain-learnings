@@ -55,7 +55,7 @@ contract demo {
 ## Constructor
 used to intialize a smart contract. Gets executed only once when the contract is created. Contructor is called by the compiler. Constructor can have arguments also.
 Only one constructor is allowed in a contract and that is optional. If no constructor is explictly defined, then a default constructor will be created by the compiler.
-```
+```solidity
 //SPDX-License-Identifier: UNLICENSED"
 pragma solidity >=0.5.0 <0.9.0;
 contract demo {
@@ -72,6 +72,44 @@ contract demo {
 - uint : supports only unsigned integers.
 default value of integers is 0.\
 Integers can have various sizes. int8 to int 256, also uint8 to uint256
+
+### Array
+fixed size array and dynamic sized array.
+```solidity
+//SPDX-License-Identifier: UNLICENSED"
+pragma solidity >=0.5.0 <0.9.0;
+contract demo {
+    uint[3] public arr = [10, 20, 30];
+    
+    function insert(uint index, uint element) public {
+        arr[index] = element;
+    }
+    
+    function len() public view returns(uint) {
+        return arr.length;
+    }
+}
+```
+
+```solidity
+//SPDX-License-Identifier: UNLICENSED"
+pragma solidity >=0.5.0 <0.9.0;
+contract demo {
+    uint[] public arr;
+    
+    function pushElement(uint element) public {
+        arr.push(element);
+    }
+    
+    function popElement() public view returns(uint) {
+        return arr.pop();
+    }
+    
+    function len() public view returns(uint) {
+        return arr.length;
+    }
+}
+```
 
 
 ## State variables, Local variables and Global variables
