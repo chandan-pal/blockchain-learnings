@@ -52,11 +52,43 @@ contract demo {
 }
 ```
 
+## Constructor
+used to intialize a smart contract. Gets executed only once when the contract is created. Contructor is called by the compiler. Constructor can have arguments also.
+Only one constructor is allowed in a contract and that is optional. If no constructor is explictly defined, then a default constructor will be created by the compiler.
+```
+//SPDX-License-Identifier: UNLICENSED"
+pragma solidity >=0.5.0 <0.9.0;
+contract demo {
+    uint public count;
+    constructor(unit _count) {
+        count = _count;
+    }
+}
+```
+
+## Datatypes in cntracts
+### Integers
+- int : supports both signed and unsigned integers. int is an alias of int256.
+- uint : supports only unsigned integers.
+default value of integers is 0.\
+Integers can have various sizes. int8 to int 256, also uint8 to uint256
+
 
 ## State variables, Local variables and Global variables
-- State Variables: The variables whose value are permanently stored in a contract storage. For each stage variable being stored, some gas will be used.
+- State Variables: The variables whose value are permanently stored in a contract storage. For each stage variable being stored/changed, some gas will be used.
 - Local Variables: Variables whose values are present till function is executing. Declared inside a function. They do not cost any gas.
 - Global Variables: Special variables exists in the global namespace used to get information about the blockchain.
 
 some datatypes like string by default get stored in contract storage. for that we specifically need to specify **'memory'** keyword.
 ``` string memory str = "test"; ```
+
+## Functions
+A function is basically a group of code which can be reused anywhere in the program.\
+defined by using the 'function' keyword, followed by name. A function can also have a list of parameters containing the datatype and name of the parameter.
+- the name of the function should be unique and should not match with any of the reserved keywords.
+
+### Pure and view keywords in function
+'view' keyword is used to indicate that the function will only read a state variable and not modify any state variable.\
+'pure' keyword is used to indicate that the function is not reading any state variable as well as not modifying any state variable.\
+when modifying a state variable in a function, neither pure nor view keyword should be used.
+
