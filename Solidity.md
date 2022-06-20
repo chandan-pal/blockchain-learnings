@@ -110,7 +110,44 @@ contract demo {
     }
 }
 ```
+### Struct
 
+```solidity
+//SPDX-License-Identifier: UNLICENSED"
+pragma solidity >=0.5.0 <0.9.0;
+struct student {
+    uint roll;
+    string name;
+}
+contract demo {
+    student public s1;
+    
+    constructor(uint _roll, string memory _name) {
+        s1.roll = _roll;
+        s1.name = _name;
+    }
+    
+    function change(uint _roll, string memory _name) public {
+        student memory new_student = student({
+            roll: _roll,
+            name: _name
+        });
+        s1 = new_student;
+    }
+}
+```
+
+### Enum
+
+```solidity
+//SPDX-License-Identifier: UNLICENSED"
+pragma solidity >=0.5.0 <0.9.0;
+contract demo {
+    enum user {allowed, not_allowed, wait}
+    user public u1 = user.not_allowed;
+    
+}
+```
 
 ## State variables, Local variables and Global variables
 - State Variables: The variables whose value are permanently stored in a contract storage. For each stage variable being stored/changed, some gas will be used.
