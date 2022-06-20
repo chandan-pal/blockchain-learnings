@@ -66,7 +66,7 @@ contract demo {
 }
 ```
 
-## Datatypes in cntracts
+## Datatypes in contracts
 ### Integers
 - int : supports both signed and unsigned integers. int is an alias of int256.
 - uint : supports only unsigned integers.
