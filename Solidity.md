@@ -273,3 +273,27 @@ function isAuthorised(address _user) public view onlyOwner returns(bool) {
 ### _; sympbol
 The symbol _; is called a merge wildcard. It merges the function code with the modifier code where the _; is placed.\
 The place where you write the _; symbol will decide if the function has to be executed before, in between or after the modifier code.
+
+## Events in solidity
+An event is an inheritable member of the contract, which stores the arguments passed in the transaction logs when emitted.\
+Events notify the applications about the change made to the contracts and applications which can be used to execute the dependent logic.
+
+```solidity
+//SPDX-License-Identifier: UNLICENSED"
+pragma solidity >=0.5.0 <0.9.0;
+contract demo {
+    uint public str;
+    event register(address manager, string char);
+    
+    function setter(string memory _str) public {
+        str = _str;
+        emit register(msg.sender, str);
+    }
+}
+```
+
+
+
+
+
+
