@@ -1,4 +1,4 @@
-# Solidity
+# Solidity 
 Solidity is an object oriented programing language for implementing smart contracts for ethereum EVM.
 
 - It is high-level
@@ -279,7 +279,7 @@ An event is an inheritable member of the contract, which stores the arguments pa
 Events notify the applications about the change made to the contracts and applications which can be used to execute the dependent logic.
 
 ```solidity
-//SPDX-License-Identifier: UNLICENSED"
+//SP*DX-License-Identifier: UNLICENSED"
 pragma solidity >=0.5.0 <0.9.0;
 contract demo {
     uint public str;
@@ -292,8 +292,28 @@ contract demo {
 }
 ```
 
+## Payable in solidity
+Any function in Solidity with the modifier Payable ensures that the function can send and receive Ether.\
+It can process transactions with non-zero Ether values and rejects any transactions with a zero Ether value.\
+- Use the keyword payable in a function or state variable to send and receive Ether.
+- Include the payable keyword in the state variable in order to withdraw from the contract
+- Include the payable keyword in the constructor to be able to deposit into the contract when the contract is created/deployed
+- Include the payable keyword in a function to allow deposits into the contract
 
-
-
+```solidity
+//SPDX-License-Identifier: UNLICENSED"
+pragma solidity >=0.5.0 <0.9.0;
+contract demo {
+    uint amount =0;
+    function payEther() 
+    ' NBVpublic payable {  // Having this function set to payable will allow another contract to call it and send it Ether.
+        amount += msg.value;
+    }
+    
+    function check_balance() public view returns (uint) {
+        return address(this).balance;
+    }
+}
+```
 
 
