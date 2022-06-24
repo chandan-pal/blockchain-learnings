@@ -180,6 +180,13 @@ defined by using the 'function' keyword, followed by name. A function can also h
 'pure' keyword is used to indicate that the function is not reading any state variable as well as not modifying any state variable.\
 when modifying a state variable in a function, neither pure nor view keyword should be used.
 
+### Assert, Require and Revert function
+These functions are part of error handling aspect in solidity.
+- **assert()** function when false, uses up all the remaining gas and reverts all the changes made.
+- **require()** function when false, also reverts back all the changes made to the contract but does refund all the remaining gas fees we offered to pay.
+- In general assert is used to check for internal errors, whereas require analyzes conditions.
+- **revert()** function is used to conditionally undo all state changes.
+
 ## Inheritance
 Inheritance in solidity is the procedure in which one contract inherits the  attributes and methods of another contract.
 
@@ -361,10 +368,13 @@ contract demo {
 
 ## ECR20 token
 Tokens are a type of cryptocurrency that represents an asset or specific use and resides on their blockchain (the blockchain from which the token was issued).\
-ECR stands for Ethereum Request for Comments. An ERC is a form of proposal and its purpose is to define standards and practices.\
+ECR stands for **Ethereum Request for Comments**. An ERC is a form of proposal and its purpose is to define standards and practices.\
 - ECR20 is a proposal that intends to standardize how a token contract should be defined, how we interact with such a token contract and how these contracts interact with each other.
 
 ## ICO (Initial Coin Offering)
 An ICO is the cryptocurrency equivalant to an IPO (Initial Public Offering).\
 A Web3 company seeking to raise money to create a new coin, app, or service can launch an ICO as a way to raise funds.\
 Interested investors can buy into ICO to receive new crytocurrency token issued by the company. This token may have some utility related to product or service that the company is offering, or it may just represent a stake in the company or project.
+
+
+
