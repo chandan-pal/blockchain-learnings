@@ -300,20 +300,66 @@ It can process transactions with non-zero Ether values and rejects any transacti
 - Include the payable keyword in the constructor to be able to deposit into the contract when the contract is created/deployed
 - Include the payable keyword in a function to allow deposits into the contract
 
+- if we want to send ether to an address, the address must be payable.
+- an address can be declared as payable by using keyword payable.
+
 ```solidity
 //SPDX-License-Identifier: UNLICENSED"
 pragma solidity >=0.5.0 <0.9.0;
 contract demo {
+    address payable user = payable(0x23234234293c42347877a87926557283453534534a3c)
     uint amount =0;
-    function payEther() 
-    ' NBVpublic payable {  // Having this function set to payable will allow another contract to call it and send it Ether.
+    function payMeMoney() public payable {  // Having this function set to payable will allow another contract to call it and send it Ether.
         amount += msg.value;
     }
     
     function check_balance() public view returns (uint) {
         return address(this).balance;
     }
+    
+    function payEtherToAccount() public {
+        user.transfer(10 ether);
+    }
+}
+```
+### Falback function
+external function with neither name, parameters, or return values. It is executed in one of following cases-
+1. If a function identifier does not match any of the available functions in the smart contract.
+2. if there was no data supplied along with the function call.
+- there can be only one fallback function in a smart contract.
+- it is compulsory to mark it external
+- It should be marked payable. If not, the contract will throw an exception if it receives ether without any data.
+- It is limited to 2300 gas if invoked by other functions.
+
+```solidity
+//SPDX-License-Identifier: UNLICENSED"
+pragma solidity >=0.5.0 <0.9.0;
+contract A {
+    uint n;
+    function set(uint value) external {
+        n = value
+    }
+    
+    //fallback function
+    function() external payable {
+        n = 0;
+    }
+}
+
+contract demo {
+    function callA(A a) public returns(bool) {
+        //calling non-existing function
+        (bool success,) = address(a).call(abi.encodeWithSignature("setter()"));
+        require(success);
+        
+        // sending ether to A
+        address payable payableA = address(uint160(address(a)));
+        return (payableA.send(2 ether));
+    }
 }
 ```
 
-
+## ECR20 token
+Tokens are a type of cryptocurrency that represents an asset or specific use and resides on their blockchain (the blockchain from which the token was issued).\
+ECR stands for Ethereum Request for Comments. An ERC is a form of proposal and its purpose is to define standards and practices.\
+- ECR20 is a proposal that intends to standardize how a token contract should be defined, how we interact with such a token contract and how these contracts interact with each other.
