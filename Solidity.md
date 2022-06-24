@@ -377,4 +377,124 @@ A Web3 company seeking to raise money to create a new coin, app, or service can 
 Interested investors can buy into ICO to receive new crytocurrency token issued by the company. This token may have some utility related to product or service that the company is offering, or it may just represent a stake in the company or project.
 
 
+## Factory pattern
+A factory contract is a smart contract that pproduces other smart contracts. A factory contract is useful in cases like -
+1. If you want to create multiple instances of the same contract and you're looking for a way to keep track of them and make their management easier.
+2. Save gas on deplyment. You can deploy only the factory and use it later to deploy the other contracts.
+3. Improve contract security.
+
+```solidity
+// factory contract
+contract A {
+    address bAddress;
+    constructor(address b){
+       bAddress = b;
+    }
+ 
+    function callHello() external view returns(string memory){
+       B b = B(bAddress); // explicit conversion from address to contract type
+       return b.sayHello();
+    }
+}
+contract B {
+     string greeting = "hello world";
+     function sayHello() external view returns(string memory){
+         return greeting;
+     }
+}
+```
+
+## Withdrawal Pattern
+Withdrawal pattern ensures that direct transfer call is not made which poses a security threat.
+problem:
+```solidity
+//SPDX-License-Identifier: UNLICENSED"
+pragma solidity >=0.5.0 <0.9.0;
+contract FindRichest {
+    address payable richest;
+    uint max;
+    
+    constructor() payable {
+        richest = payable(msg.sender); // set the owner of the contract as richest initially
+        max = msg.value; // set inital max value
+        richest.transfer(msg.value); // transfer back the ether of the owner
+    }
+    
+    function sendEther() payable public {
+        require(msg.value>max, "You are not the richest");
+        richest = payable(msg.sender);
+        max = msg.value;
+        richest.transfer(msg.value); // problem lies here when another contract is the caller.
+    }
+}
+
+contract demo {
+    function A() public {
+        FindRichest.sendEther(); // assuming demo contract is calling the sendEther function.
+    }
+    
+    fallback() payable external {
+        revert(); // simulating failure
+    }
+}
+```
+In the above example, if demo contract calls the send ether function of FindRichest and the execution reaches the ```richest.transfer(msg.value)``` line then the fallback function of the demo contract will be called since 'richest' is the demo contract. If the fallback function fails then it will revert all the state changes of the FindRichest contract also.\
+To solve this problem we can use **withdrawal pattern**.
+
+```solidity
+//SPDX-License-Identifier: UNLICENSED"
+pragma solidity >=0.5.0 <0.9.0;
+contract FindRichest {
+    address payable richest;
+    uint max;
+    
+    // store all pending withdrawals
+    mapping (address => uint) pendingWithdrawals;
+    
+    constructor() payable {
+        richest = payable(msg.sender); // set the owner of the contract as richest initially
+        max = msg.value; // set inital max value
+        richest.transfer(msg.value); // transfer back the ether of the owner
+    }
+    
+    function sendEther() payable public {
+        require(msg.value>max, "You are not the richest");
+        richest = payable(msg.sender);
+        max = msg.value;
+        // richest.transfer(msg.value); // no direct transfer
+        pendingWithdrawals[richest] += msg.value; // store the transfer mapping
+    }
+    
+    // indirect withdrawal - in this case only the calling contract will fail, but this contract will not fail.
+    function withdraw() public {
+      uint amount = pendingWithdrawals[msg.sender];
+      pendingWithdrawals[msg.sender] = 0;
+      msg.sender.transfer(amount);
+   }
+}
+```
+
+
+
+## Mapping Iterator
+The mapping type provides the ability to store and retrieve values for a particular key. However, it does not provide the ability to return an iterable list of keys.\
+
+To solve this solidity suggests to keep track of all keys of the mapping in a separate dynamic array.
+```solidity
+//SPDX-License-Identifier: UNLICENSED"
+pragma solidity >=0.5.0 <0.9.0;
+contract demo {
+    mapping(address=>uint) public values;
+    address[] public arr;
+    
+    function pay(uint _value) public {
+        values[msg.sender] = _value;
+        arr.push(msg.sender);
+    }
+    
+    function returnArray() public view returns(address[] memory) {
+        return arr;
+    }
+}
+```
 
