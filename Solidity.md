@@ -363,3 +363,8 @@ contract demo {
 Tokens are a type of cryptocurrency that represents an asset or specific use and resides on their blockchain (the blockchain from which the token was issued).\
 ECR stands for Ethereum Request for Comments. An ERC is a form of proposal and its purpose is to define standards and practices.\
 - ECR20 is a proposal that intends to standardize how a token contract should be defined, how we interact with such a token contract and how these contracts interact with each other.
+
+## ICO (Initial Coin Offering)
+An ICO is the cryptocurrency equivalant to an IPO (Initial Public Offering).\
+A Web3 company seeking to raise money to create a new coin, app, or service can launch an ICO as a way to raise funds.\
+Interested investors can buy into ICO to receive new crytocurrency token issued by the company. This token may have some utility related to product or service that the company is offering, or it may just represent a stake in the company or project.
